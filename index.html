@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dions Website</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        color: #333;
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 20px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: background-color 0.5s ease;
+      }
+      h1 {
+        color: #2c3e50;
+        text-align: center;
+      }
+      h2 {
+        color: #34495e;
+        font-style: italic;
+        text-align: center;
+      }
+      ul {
+        background-color: #e7f3ff;
+        padding: 15px;
+        border-radius: 8px;
+      }
+      a {
+        color: #2980b9;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      img {
+        display: block;
+        margin: 20px auto;
+        border-radius: 50%;
+      }
+      button {
+        display: block;
+        margin: 25px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #2980b9;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #1c5980;
+      }
+      form {
+        background-color: #e7f3ff;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+      input, textarea {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      button[type="submit"] {
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+      }
+      button[type="submit"]:hover {
+        background-color: #1e8449;
+      }
+      #responseMessage {
+        color: green;
+        text-align: center;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dion Jusufovski</h1>
+    <h2>Love playing video games</h2>
+    <p>I am learning to code and make small Websites like this one.</p>
+    <img src="https://via.placeholder.com/150" alt="Profile picture" />
+    <h3>My Favorite Hobbies:</h3>
+    <ul>
+      <li>wank</li>
+      <li>eat</li>
+      <li>shit</li>
+    </ul>
+    <p>Check out my favorite site: <a href="https://www.pornhub.com">Click Here</a></p>
+
+    <button onclick="showGreeting()">Click me for a greeting!</button>
+
+    <h3>Contact Me</h3>
+    <form id="contactForm">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" placeholder="Your name" required /><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea><br /><br />
+
+      <button type="submit">Send</button>
+    </form>
+    <p id="responseMessage"></p>
+
+    <script>
+      function showGreeting() {
+        alert('Hey Dion! Keep rocking those websites! 🚀');
+        const colors = ['#f0f8ff', '#d1f2eb', '#f9e79f', '#fadbd8', '#d6eaf8'];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = randomColor;
+      }
+
+      const form = document.getElementById('contactForm');
+      const responseMessage = document.getElementById('responseMessage');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = form.name.value.trim();
+        const message = form.message.value.trim();
+
+        if (name && message) {
+          responseMessage.style.color = 'green';
+          responseMessage.textContent = `Thanks for reaching out, ${name}! I'll get back to you soon.`;
+          form.reset();
+        } else {
+          responseMessage.style.color = 'red';
+          responseMessage.textContent = 'Please fill in both fields.';
+        }
+      });
+    </script>
+  </body>
+</html>
